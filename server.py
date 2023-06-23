@@ -29,8 +29,6 @@ def listen_for_client(cs):
 
         for client_socket in connected_sockets:
             client_socket.send(msg.encode())
-
-
 while True:
     client_socket, client_address = s.accept()
     print (f"{client_address} online!")
@@ -44,5 +42,7 @@ while True:
     t.start()
 for cs in connected_sockets:
     cs.close()
+
+
 
 s.close()
